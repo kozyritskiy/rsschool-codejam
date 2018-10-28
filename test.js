@@ -32,3 +32,35 @@ describe('sumOfOther', () => {
     assert.deepEqual(result, [7, 8, 4, 8]);
   });
 });
+
+describe('make', () => {
+  it('1', () => {
+    const sum = (a, b) => a + b;
+    const result = make(15)(34, 21, 666)(41)(sum);
+    assert.equal(result, 777);
+  });
+
+  it('2', () => {
+    const sum = (a, b) => a + b;
+    const result = make(5)(23, 76, 42)(21, 12)(sum);
+    assert.equal(result, 179);
+  });
+
+  it('3', () => {
+    const sum = (a, b) => a + b;
+    const result = make(76)(130, 1867)(1654, 423, 12)(sum);
+    assert.equal(result, 4162);
+  });
+
+  it('4', () => {
+    const sum = (a, b) => a + b;
+    const result = make(1)(11, 111, 1111)(sum);
+    assert.equal(result, 1234);
+  });
+
+  it('5', () => {
+    const sum = (a, b) => a + b;
+    const result = make(1)(1, 1, 1)(1, 1, 1, 1)(sum);
+    assert.equal(result, 8);
+  });
+});
